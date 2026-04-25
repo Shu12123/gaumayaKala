@@ -1,0 +1,25 @@
+.searchBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .castleTwo {
+    // padding-left: 1rem;
+    // width: 14rem;
+    // height: 2.125rem;
+    padding: 0.5rem 2.25rem;
+    background-color: var(--c-fifth);
+    border-radius: 1.325rem;
+    border: solid 0.1rem var(--c-sixth);
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input {
+      border: none;
+      background: transparent;
+      font-family: var(--ff-title);
+      font-weight: 600;
+    }
+  }
+}

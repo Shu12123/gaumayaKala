@@ -1,0 +1,38 @@
+.fiftyOne {
+  .fiftyOneInner {
+    background-color: var(--c-eighteen);
+    border-radius: 1rem;
+    margin: 0rem 0.5rem;
+    // max-width: 17rem;
+
+    // max-height: 22rem;
+    position: relative;
+    overflow: hidden;
+    .fiftyOneUp {
+      img {
+        // width: 19rem;
+        // height: 15rem;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1.2;
+      }
+    }
+    .fiftyOneDown {
+      .downOne {
+        font-size: 0.575rem;
+        padding-top: 0.3125rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 1rem;
+        text-align: left;
+        .peopleRating {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+.verna {
+  -webkit-line-clamp: 4;
+}

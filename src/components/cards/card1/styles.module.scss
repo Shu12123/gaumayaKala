@@ -1,0 +1,166 @@
+.first {
+  background-color: var(--c-seventeen);
+  border-radius: 1.25rem;
+  // width: 13rem;
+  // height: 16.3rem;
+  .second {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin-top: 0.875rem;
+
+    .mondayTwo {
+      // margin-top: 0.875rem;
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1.33;
+      width: 100%;
+      // height: 10rem;
+      // background-color: var(--c-seventeen);
+      .cardTopBanner {
+        background-color: var(--c-fourth);
+        top: 2%;
+        left: 2%;
+        color: var(--c-white);
+        position: absolute;
+        width: fit-content;
+        font-size: 0.5rem;
+        z-index: 2;
+        padding: 0.25rem;
+        border-radius: 0.25rem;
+        font-weight: 800;
+      }
+      .img {
+        // min-width: 13rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+        // border-radius: 1.25rem;
+      }
+      .ten {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        padding: 0.875rem;
+        opacity: 0;
+        transition: 0.7s ease;
+        align-items: flex-end;
+        justify-content: flex-end;
+        pointer-events: none;
+      }
+
+      .eleven {
+        background: var(--c-eight);
+        border: 0.075rem solid var(--c-dark-2);
+        border-radius: 1.5rem;
+        // width: 1.6rem;
+        // height: 1.6rem;
+        cursor: pointer;
+        font-size: 1.125rem;
+        pointer-events: auto;
+
+        .camera {
+          font-size: 1.575rem;
+        }
+        .cameraNine {
+          font-size: 1.575rem;
+        }
+      }
+      &:hover .ten {
+        opacity: 1;
+      }
+    }
+  }
+  .mondayOnne {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    // max-width: 13rem;
+    font-size: 0.65rem;
+    .mondayThree {
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+      text-align: left;
+      .hundredSix {
+        display: flex;
+        gap: 5.125rem;
+
+        .hundredFive {
+          display: flex;
+          gap: 0.125rem;
+          .hundredSeven {
+            margin-top: 0.15rem;
+          }
+        }
+        .twelve {
+          display: flex;
+          width: fit-content;
+          .third {
+            display: flex;
+            justify-content: center;
+            // font-size: 0.65rem;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+//button
+.five Button {
+  background-color: var(--c-tenth);
+  // width: 2.5rem;
+  border-radius: 1.5rem;
+  // height: 2.45rem;
+  color: var(--c-eleventh);
+  font-size: 1.125rem;
+  min-width: unset !important;
+  border: none;
+  .cameraNew {
+    font-size: 1rem;
+    padding: 0.675rem 0.45rem;
+  }
+}
+
+//button 2
+.ten Button {
+  background-color: var(--c-twelvth);
+  // width: 5%;
+  border-radius: 1.25rem;
+  // height: 1.5rem;
+  color: var(--c-thirteen);
+  // min-width: unset !important;
+  // width: 2rem;
+  border: 0.125rem solid var(--c-forteen);
+  padding: 0rem !important;
+}
+
+.text {
+  -webkit-line-clamp: 1;
+}
+@media (max-width: 1279px) {
+  .first {
+    .mondayOnne {
+      font-size: 0.775rem;
+      .mondayThree {
+        .hundredSix {
+          gap: 1.125rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

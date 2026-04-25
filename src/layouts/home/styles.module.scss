@@ -1,0 +1,14 @@
+.main {
+  width: 100%;
+  background-color: var(--c-eight);
+}
+
+.content {
+  min-height: 70vh;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1279px) {
+  .content {
+  }
+}

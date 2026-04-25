@@ -1,0 +1,81 @@
+@use '/src/styles/mixins' as *;
+
+.labelOne {
+  width: 55rem;
+  margin: 4rem auto;
+  text-align: center;
+  & > div {
+    color: var(--c-nineth);
+    font-family: var(--ff-primary);
+    font-weight: 700;
+    margin-bottom: 1.175rem;
+  }
+}
+.tuesday {
+  font-size: 1.5rem;
+}
+.collectCard {
+  margin-bottom: 2.5rem;
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  gap: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.categoryCard {
+  margin-bottom: 2.5rem;
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.forth {
+  // display: flex;
+  // gap: 0.675rem;
+  // justify-content: center;
+  margin-bottom: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.875rem;
+}
+
+.btn {
+  @include buttonStyle;
+  max-width: 6rem;
+  margin: 1.5rem auto 1.5rem auto;
+  height: 2.5rem;
+}
+.forthing {
+  margin-bottom: 2.5rem;
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // gap: 0.575rem;
+}
+@media (max-width: 1279px) {
+  .labelOne {
+    width: 93%;
+    margin: 60px auto;
+  }
+  .collectCard {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.1rem;
+    align-items: flex-start;
+  }
+  .categoryCard {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    gap: 0.875rem;
+  }
+  .forth {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.875rem;
+  }
+  .forthing {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.875rem;
+  }
+}

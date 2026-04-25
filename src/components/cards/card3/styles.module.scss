@@ -1,0 +1,15 @@
+.collectionClass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 250px;
+  gap: 7rem;
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+  .collectionFont {
+    color: var(--c-nineth);
+  }
+}
