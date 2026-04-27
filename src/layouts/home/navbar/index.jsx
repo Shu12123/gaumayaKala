@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import s from './styles.module.scss'
 import { Icon, Search } from 'components'
 import { Link } from 'react-router-dom'
+
 const banner = [
   'Extra discouts upto Rs250 at checkout',
   '10%off upto Rs.100!Use coupon code:WOW10|MinOrder899',
   '15% off upto Rs.250!Use coupon code:EXTRA15 Min Order1549',
   'Save Min 50% on all orders and get free shipping'
 ]
+
 const Header = () => {
   const [isSideBarOpened, setIsSideBarOpened] = useState(false)
+
   return (
     <header>
       <div className={s.topStrip}>
@@ -61,10 +64,10 @@ const Navigation = ({ isSideBarOpened }) => {
             <Link to='/bestseller'>BEST SELLER</Link>
           </div>
           <div className={s.navItem}>
-            <Link to='/about'>ABOUT US</Link>
+            <Link to='/'>ABOUT US</Link>
           </div>
           <div className={s.navItem}>
-            <Link to='/allproducts'>ALL PRODUCTS</Link>
+            <Link to='/products'>ALL PRODUCTS</Link>
           </div>
         </div>
       </div>

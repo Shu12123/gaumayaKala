@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
-// import './basepanel.scss'
+import { useEffect } from 'react'
 import s from './styles.module.scss'
+
 const banners = [
   'https://d1311wbk6unapo.cloudfront.net/NushopCatalogue/tr:f-webp,w-1600,fo-auto/68bbff7d0f8ea24b58705310/template/1769423352569_JO1E3MN0S7_2026-01-26_1.png',
   'https://d1311wbk6unapo.cloudfront.net/NushopCatalogue/tr:f-webp,w-1600,fo-auto/68bbff7d0f8ea24b58705310/template/1769424347817_VDTGRZX4PQ_2026-01-26_1.png',
@@ -8,6 +8,7 @@ const banners = [
   'https://d1311wbk6unapo.cloudfront.net/NushopCatalogue/tr:f-webp,w-1600,fo-auto/68bbff7d0f8ea24b58705310/template/1769426006065_LX13E950EL_2026-01-26_2.png'
 ]
 const Banners = ({ uKey = 'default banner' }) => {
+
   useEffect(() => {
     if (banners.length) {
       const swiper = new window.Swiper('.homeBannersSwiper' + uKey, {
@@ -40,7 +41,7 @@ const Banners = ({ uKey = 'default banner' }) => {
 
   return (
     <div className={s.main}>
-      <div className={s.banners + ' indent'}>
+      <div className={s.banners}>
         {!!banners.length && (
           <div className={`swiper homeBannersSwiper${uKey} ` + s.swiperContainer}>
             <div className='swiper-wrapper'>

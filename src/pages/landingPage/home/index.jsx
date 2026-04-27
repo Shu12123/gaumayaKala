@@ -1,31 +1,26 @@
-import React, { useEffect, useState } from 'react'
-// import './frontpage.scss'
 import s from './styles.module.scss'
-
-import { Card, Cards } from 'components'
+import { useEffect } from 'react'
+import { Cards } from 'components'
 import Banners from './banners'
 import { cardsData, cardsData2, cardsData3, cardsData4 } from 'components/cardDetail'
 import { responsive } from 'helpers'
 
 export default function Home() {
   return (
-    <div>
+    <div className={s.home + " indent"}>
       <Banners />
-      {/* <Banners /> */}
-
       <div className={s.labelOne}>
         <div className={s.tuesday}> OUR COLLECTIONS</div>
         <div className={s.collectCard}>
-          {cardsData3.map((card, i) => (
+          {cardsData3.map((card) => (
             <Cards.Card3 {...card} key={card.text} />
           ))}
         </div>
-        {/* <button className={s.btn}>View All</button> */}
       </div>
       <div className={s.labelOne}>
         <div className={s.tuesday}>ALL PRODUCTS</div>
         <div className={s.forth}>
-          {cardsData.map((card, i) => (
+          {cardsData.map((card) => (
             <Cards.Card1 {...card} key={card.text} />
           ))}
         </div>
@@ -34,16 +29,15 @@ export default function Home() {
       <div className={s.labelOne}>
         <div className={s.tuesday}>Shop By Category</div>
         <div className={s.categoryCard}>
-          {cardsData4.map((card, i) => (
+          {cardsData4.map((card) => (
             <Cards.Card4 {...card} key={card.text} />
           ))}
         </div>
-        {/* <button className={s.btn}>View All</button> */}
       </div>
       <div className={s.labelOne}>
         <div className={s.tuesday}>AMAZING DEALS</div>
         <div className={s.forth}>
-          {cardsData.map((card, i) => (
+          {cardsData.map((card) => (
             <Cards.Card1 {...card} key={card.text} />
           ))}
         </div>
@@ -53,9 +47,6 @@ export default function Home() {
       <div className={s.labelOne}>
         <div className={s.tuesday}>CUSTOMER FEEDBACK</div>
         <div className={s.forthing}>
-          {/* {cardsData2.map((card, i) => (
-            <Cards.Card2 {...card} key={i} />
-          ))} */}
           <MovingSlider />
         </div>
       </div>
@@ -64,6 +55,7 @@ export default function Home() {
 }
 const MovingSlider = () => {
   const isResponsive = responsive()
+
   useEffect(() => {
     if (cardsData2.length) {
       const swiper = new window.Swiper('.homeMovingSliderSwiper', {

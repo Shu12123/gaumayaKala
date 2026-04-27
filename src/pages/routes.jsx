@@ -1,12 +1,12 @@
+import BestSeller from './common/bestSeller'
+import CowDung from './common/cowDung'
+import HomeDecor from './common/homeDecor'
+import NewArrival from './common/newArrival'
+import Product from './common/product'
+import Products from './common/products'
+
 import Home from './landingPage/home'
 
-import All_Products from './common/allproduct/Allproduct'
-import BestSeller from './common/bestseller/Bestseller'
-import Cowdung from './common/cowdung/Cowdung'
-import Homedecor from './common/homedecor'
-import Newarrival from './common/newarrival/Newarrival'
-
-import Product from './common/product'
 import * as Layout from 'layouts'
 
 const auth = []
@@ -21,8 +21,8 @@ const landingPages = [
     auth: false
   },
   {
-    path: '/allproducts',
-    Component: All_Products,
+    path: '/products',
+    Component: Products,
     Super: Layout.Home,
     auth: false
   },
@@ -34,19 +34,19 @@ const landingPages = [
   },
   {
     path: '/cowdung',
-    Component: Cowdung,
+    Component: CowDung,
     Super: Layout.Home,
     auth: false
   },
   {
     path: '/homedecor',
-    Component: Homedecor,
+    Component: HomeDecor,
     Super: Layout.Home,
     auth: false
   },
   {
     path: '/newarrival',
-    Component: Newarrival,
+    Component: NewArrival,
     Super: Layout.Home,
     auth: false
   },
