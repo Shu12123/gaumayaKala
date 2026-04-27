@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 // import './basepanel.scss'
 import s from './styles.module.scss'
 const banners = [
@@ -7,10 +7,10 @@ const banners = [
   'https://d1311wbk6unapo.cloudfront.net/NushopCatalogue/tr:f-webp,w-1600,fo-auto/68bbff7d0f8ea24b58705310/template/1769424347817_YQ2GM7AADX_2026-01-26_2.png',
   'https://d1311wbk6unapo.cloudfront.net/NushopCatalogue/tr:f-webp,w-1600,fo-auto/68bbff7d0f8ea24b58705310/template/1769426006065_LX13E950EL_2026-01-26_2.png'
 ]
-const Banners = () => {
+const Banners = ({ uKey = 'default banner' }) => {
   useEffect(() => {
     if (banners.length) {
-      const swiper = new window.Swiper('.homeBannersSwiper', {
+      const swiper = new window.Swiper('.homeBannersSwiper' + uKey, {
         slidesPerView: 1,
         spaceBetween: 0,
         loop: true,
@@ -22,30 +22,30 @@ const Banners = () => {
         },
         // autoplay: false,
         pagination: {
-          el: '.homeBannersSwiperPagination',
+          el: '.homeBannersSwiperPagination' + uKey,
           clickable: true,
           dynamicBullets: true
         },
         navigation: {
-          nextEl: '.homeBannersSwiperNext',
-          prevEl: '.homeBannersSwiperPrev'
+          nextEl: '.homeBannersSwiperNext' + uKey,
+          prevEl: '.homeBannersSwiperPrev' + uKey
         }
       })
 
       return () => {
-        if (swiper) swiper.destroy()
+        // if (swiper) swiper.destroy()
       }
     }
-  }, [banners.length])
+  }, [banners.length, uKey])
 
   return (
     <div className={s.main}>
       <div className={s.banners + ' indent'}>
         {!!banners.length && (
-          <div className={'swiper homeBannersSwiper ' + s.swiperContainer}>
+          <div className={`swiper homeBannersSwiper${uKey} ` + s.swiperContainer}>
             <div className='swiper-wrapper'>
               {banners.map((banner, i) => (
-                <div className={s.slide + ' swiper-slide'} key={banner + i}>
+                <div className={s.slide + ' swiper-slide'} key={banner + i + uKey}>
                   <div className={s.img}>
                     <img src={banner} />
                   </div>
@@ -54,7 +54,7 @@ const Banners = () => {
             </div>
             {/* <div className={'swiper-button-next homeBannersSwiperNext ' + s.next}></div> */}
             {/* <div className={'swiper-button-prev homeBannersSwiperPrev ' + s.prev}></div> */}
-            <div className='swiper-pagination homeBannersSwiperPagination'></div>
+            <div className={`swiper-pagination homeBannersSwiperPagination` + uKey}></div>
           </div>
         )}
       </div>

@@ -8,7 +8,6 @@ import { cardsData, cardsData2, cardsData3, cardsData4 } from 'components/cardDe
 import { responsive } from 'helpers'
 
 export default function Home() {
-  const isResponsive = responsive()
   return (
     <div>
       <Banners />
@@ -50,6 +49,7 @@ export default function Home() {
         </div>
         <button className={s.btn}>View All</button>
       </div>
+      <Banners uKey='bannerSection2' />
       <div className={s.labelOne}>
         <div className={s.tuesday}>CUSTOMER FEEDBACK</div>
         <div className={s.forthing}>
@@ -109,60 +109,6 @@ const MovingSlider = () => {
             {/* <div className={'swiper-button-next homeMovingSliderSwiperNext ' + s.next}></div> */}
             {/* <div className={'swiper-button-prev homeMovingSliderSwiperPrev ' + s.prev}></div> */}
             <div className='swiper-pagination homeMovingSliderSwiperPagination'></div>
-          </div>
-        )}
-      </div>
-    </div>
-  )
-}
-
-const Moving = ({ imge }) => {
-  // const isResponsive = responsive()
-  useEffect(() => {
-    if (cardsData4.length) {
-      const swiper = new window.Swiper('.homeMovingSwiper', {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        loop: true,
-        lazy: true,
-        preloadImages: false,
-        autoplay: {
-          delay: 5000, // Adjust as needed
-          disableOnInteraction: false
-        },
-        // autoplay: false,
-        pagination: {
-          el: '.homeMovingSwiperPagination',
-          clickable: true,
-          dynamicBullets: true
-        },
-        navigation: {
-          nextEl: '.homeMovingSwiperNext',
-          prevEl: '.homeMovingSwiperPrev'
-        }
-      })
-
-      return () => {
-        if (swiper) swiper.destroy()
-      }
-    }
-  }, [cardsData4.length])
-
-  return (
-    <div className={s.main}>
-      <div className={s.cardsData4 + ' indent'}>
-        {!!cardsData4.length && (
-          <div className={'swiper homeMovingSwiper ' + s.swiperContainer}>
-            <div className='swiper-wrapper'>
-              {cardsData4.map((c, i) => (
-                <div className={s.slide + ' swiper-slide'} key={c.imge + i}>
-                  <Cards.Card4 {...c} />
-                </div>
-              ))}
-            </div>
-            {/* <div className={'swiper-button-next homeMovingSwiperNext ' + s.next}></div> */}
-            {/* <div className={'swiper-button-prev homeMovingSwiperPrev ' + s.prev}></div> */}
-            <div className='swiper-pagination homeMovingSwiperPagination'></div>
           </div>
         )}
       </div>
