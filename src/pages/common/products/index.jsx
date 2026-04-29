@@ -1,10 +1,8 @@
-import React from 'react'
-// import './styles.module.scss'
 import s from './styles.module.scss'
 import { Cards, Icon } from 'components'
 import { cardsData } from 'components/cardDetail'
-// import Card from '../../components/basepanel/card'
-const All_Products = () => {
+
+export default function All_Products() {
   return (
     <div className={s.thirtyOne}>
       <div className={s.thirtyTwo}>
@@ -52,5 +50,3 @@ const All_Products = () => {
     </div>
   )
 }
-
-export default All_Products

@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
 import s from './styles.module.scss'
+import { useEffect, useState } from 'react'
 import { Icon, Search } from 'components'
 import { Link } from 'react-router-dom'
 
@@ -10,7 +10,7 @@ const banner = [
   'Save Min 50% on all orders and get free shipping'
 ]
 
-const Header = () => {
+export default function Header() {
   const [isSideBarOpened, setIsSideBarOpened] = useState(false)
 
   return (
@@ -43,8 +43,6 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header
 
 const Navigation = ({ isSideBarOpened }) => {
   return (

@@ -7,46 +7,46 @@ import { responsive } from 'helpers'
 
 export default function Home() {
   return (
-    <div className={s.home + " indent"}>
+    <div className={s.home + ' indent'}>
       <Banners />
-      <div className={s.labelOne}>
-        <div className={s.tuesday}> OUR COLLECTIONS</div>
+      <div className={s.homeHeader}>
+        <div className={s.homeContent}> OUR COLLECTIONS</div>
         <div className={s.collectCard}>
-          {cardsData3.map((card) => (
+          {cardsData3.map(card => (
             <Cards.Card3 {...card} key={card.text} />
           ))}
         </div>
       </div>
-      <div className={s.labelOne}>
-        <div className={s.tuesday}>ALL PRODUCTS</div>
-        <div className={s.forth}>
-          {cardsData.map((card) => (
+      <div className={s.homeHeader}>
+        <div className={s.homeContent}>ALL PRODUCTS</div>
+        <div className={s.cardHead}>
+          {cardsData.map(card => (
             <Cards.Card1 {...card} key={card.text} />
           ))}
         </div>
         <button className={s.btn}>View All</button>
       </div>
-      <div className={s.labelOne}>
-        <div className={s.tuesday}>Shop By Category</div>
+      <div className={s.homeHeader}>
+        <div className={s.homeContent}>Shop By Category</div>
         <div className={s.categoryCard}>
-          {cardsData4.map((card) => (
+          {cardsData4.map(card => (
             <Cards.Card4 {...card} key={card.text} />
           ))}
         </div>
       </div>
-      <div className={s.labelOne}>
-        <div className={s.tuesday}>AMAZING DEALS</div>
-        <div className={s.forth}>
-          {cardsData.map((card) => (
+      <div className={s.homeHeader}>
+        <div className={s.homeContent}>AMAZING DEALS</div>
+        <div className={s.cardHead}>
+          {cardsData.map(card => (
             <Cards.Card1 {...card} key={card.text} />
           ))}
         </div>
         <button className={s.btn}>View All</button>
       </div>
       <Banners uKey='bannerSection2' />
-      <div className={s.labelOne}>
-        <div className={s.tuesday}>CUSTOMER FEEDBACK</div>
-        <div className={s.forthing}>
+      <div className={s.homeHeader}>
+        <div className={s.homeContent}>CUSTOMER FEEDBACK</div>
+        <div className={s.customerCard}>
           <MovingSlider />
         </div>
       </div>

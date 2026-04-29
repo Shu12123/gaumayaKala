@@ -1,12 +1,11 @@
+import s from './styles.module.scss'
 import { useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { useEffect } from 'react'
-// import "./product.scss";
-import s from './styles.module.scss'
 import { head, responsive } from 'helpers'
 import { Icon } from 'components'
 
-const Product = () => {
+export default function Product() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -183,8 +182,6 @@ const Product = () => {
     </div>
   )
 }
-
-export default Product
 
 const ResponsivePage = ({ img }) => {
   useEffect(() => {
