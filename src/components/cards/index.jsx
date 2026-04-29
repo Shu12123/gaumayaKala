@@ -1,13 +1,13 @@
-import Card1 from './card1'
-import Card2 from './card2'
-import Card3 from './card3'
-import Card4 from './card4'
+import Product from './product'
+import Feedback from './feedback'
+import Collection from './collection'
+import Category from './category'
 
 const Cards = {
-  Card1,
-  Card2,
-  Card3,
-  Card4
+  Product,
+  Feedback,
+  Collection,
+  Category
 }
 
 export default Cards

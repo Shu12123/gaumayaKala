@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import s from './styles.module.scss'
 import { Icon } from 'components'
-const Card = ({ img, text, price }) => {
+
+const Product = ({ img, text, price }) => {
   const [index, setIndex] = useState(0)
 
   const nextImage = () => {
@@ -34,7 +35,6 @@ const Card = ({ img, text, price }) => {
       </div>
       <div className={s.mondayOnne}>
         <div className={s.mondayThree}>
-          {/* <div>{text.slice(0, 40)}...</div> */}
           <div className={`ellipsis ${s.text}`}>{text}</div>
           <div className={s.hundredSix}>
             <div>
@@ -58,4 +58,4 @@ const Card = ({ img, text, price }) => {
   )
 }
 
-export default Card
+export default Product

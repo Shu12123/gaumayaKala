@@ -1,9 +1,9 @@
 import s from './styles.module.scss'
 import { useEffect } from 'react'
 import { Cards } from 'components'
-import Banners from './banners'
-import { cardsData, cardsData2, cardsData3, cardsData4 } from 'components/cardDetail'
 import { responsive } from 'helpers'
+import { collections, products, categories, feedbacks } from 'data'
+import Banners from './banners'
 
 export default function Home() {
   return (
@@ -12,16 +12,16 @@ export default function Home() {
       <div className={s.homeHeader}>
         <div className={s.homeContent}> OUR COLLECTIONS</div>
         <div className={s.collectCard}>
-          {cardsData3.map(card => (
-            <Cards.Card3 {...card} key={card.text} />
+          {collections.map(card => (
+            <Cards.Collection {...card} key={card.title} />
           ))}
         </div>
       </div>
       <div className={s.homeHeader}>
         <div className={s.homeContent}>ALL PRODUCTS</div>
         <div className={s.cardHead}>
-          {cardsData.map(card => (
-            <Cards.Card1 {...card} key={card.text} />
+          {products.map((card, i) => (
+            <Cards.Product {...card} key={card.text + i} />
           ))}
         </div>
         <button className={s.btn}>View All</button>
@@ -29,16 +29,16 @@ export default function Home() {
       <div className={s.homeHeader}>
         <div className={s.homeContent}>Shop By Category</div>
         <div className={s.categoryCard}>
-          {cardsData4.map(card => (
-            <Cards.Card4 {...card} key={card.text} />
+          {categories.map(card => (
+            <Cards.Category {...card} key={card.image} />
           ))}
         </div>
       </div>
       <div className={s.homeHeader}>
         <div className={s.homeContent}>AMAZING DEALS</div>
         <div className={s.cardHead}>
-          {cardsData.map(card => (
-            <Cards.Card1 {...card} key={card.text} />
+          {products.map((card, i) => (
+            <Cards.Product {...card} key={card.text + i + card.img} />
           ))}
         </div>
         <button className={s.btn}>View All</button>
@@ -57,7 +57,7 @@ const MovingSlider = () => {
   const isResponsive = responsive()
 
   useEffect(() => {
-    if (cardsData2.length) {
+    if (feedbacks.length) {
       const swiper = new window.Swiper('.homeMovingSliderSwiper', {
         slidesPerView: isResponsive ? 1 : 3,
         spaceBetween: isResponsive ? 0 : 30,
@@ -84,17 +84,17 @@ const MovingSlider = () => {
         if (swiper) swiper.destroy()
       }
     }
-  }, [cardsData2.length, isResponsive])
+  }, [feedbacks.length, isResponsive])
 
   return (
     <div className={s.main}>
       <div className={s.cardsData2 + ' indent'}>
-        {!!cardsData2.length && (
+        {!!feedbacks.length && (
           <div className={'swiper homeMovingSliderSwiper ' + s.swiperContainer}>
             <div className='swiper-wrapper'>
-              {cardsData2.map((c, i) => (
+              {feedbacks.map((c, i) => (
                 <div className={s.slide + ' swiper-slide'} key={c.img + i}>
-                  <Cards.Card2 {...c} />
+                  <Cards.Feedback {...c} />
                 </div>
               ))}
             </div>

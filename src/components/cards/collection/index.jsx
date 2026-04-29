@@ -1,8 +1,7 @@
-// import React from 'react'
 import { Link } from 'react-router-dom'
 import s from './styles.module.scss'
 
-const Card3 = ({ img, title, link }) => {
+const Collection = ({ img, title, link }) => {
   return (
     <div className={s.collectionClass}>
       <Link to={link}>
@@ -13,4 +12,4 @@ const Card3 = ({ img, title, link }) => {
   )
 }
 
-export default Card3
+export default Collection

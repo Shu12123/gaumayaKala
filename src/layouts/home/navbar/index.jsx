@@ -2,8 +2,9 @@ import s from './styles.module.scss'
 import { useEffect, useState } from 'react'
 import { Icon, Search } from 'components'
 import { Link } from 'react-router-dom'
+import { responsive } from 'helpers'
 
-const banner = [
+const labels = [
   'Extra discouts upto Rs250 at checkout',
   '10%off upto Rs.100!Use coupon code:WOW10|MinOrder899',
   '15% off upto Rs.250!Use coupon code:EXTRA15 Min Order1549',
@@ -12,90 +13,78 @@ const banner = [
 
 export default function Header() {
   const [isSideBarOpened, setIsSideBarOpened] = useState(false)
+  const isResponsive = responsive()
 
   return (
-    <header>
-      <div className={s.topStrip}>
-        <div className={s.container}>
-          {/* <div className={s.castleOne}>Extra discouts upto Rs250 at checkout</div> */}
-          <div className={s.castleOne}>
-            <Ban />
-          </div>
-        </div>
-      </div>
-      <div className={s.middleStrip}>
-        <div className={s.container}>
-          <div className={s.colEleven}>
-            <Icon className={s.menuIcon} icon='menu' onClick={() => setIsSideBarOpened(!isSideBarOpened)} />
+    <header className={s.header}>
+      <Labels />
+      <div className={s.middle + " indent"}>
+        <div className={s.left}>
+          {!!isResponsive && <Icon className={s.menuIcon} icon='menu' onClick={() => setIsSideBarOpened(!isSideBarOpened)} />}
+          <div className={s.logo}>
             <img src='/Gaumayakala.webp' alt='GaumayaKala' />
           </div>
-          <div className={s.colTwelve}>
-            <Search />
-          </div>
-          <div className={s.colThirteen}>
-            <Order />
-          </div>
+        </div>
+        {!isResponsive && <Search />}
+        <div className={s.userActions}>
+          {!!isResponsive && <Icon className={s.icon} icon='Search' />}
+          <Link className={s.userAction} to='/order'>
+            <Icon className={s.icon} icon='person' />
+            {!isResponsive ? 'Order' : ""}
+          </Link>
+          <Link className={s.userAction} to='/bag'>
+            <Icon className={s.icon} icon='shopping_bag' />
+            {!isResponsive ? 'Bag' : ""}
+          </Link>
         </div>
       </div>
-      <div className={s.bottomStrip}>
-        <Navigation isSideBarOpened={isSideBarOpened} />
-      </div>
+      <Navigation isSideBarOpened={isSideBarOpened} />
     </header>
   )
 }
 
 const Navigation = ({ isSideBarOpened }) => {
   return (
-    <nav className={isSideBarOpened ? s.active : ''}>
-      <div className={s.conta}>
-        <div className={s.hundredTwo}>
-          <div className={s.navItem}>
-            <Link to='/homedecor'>HOME DECOR</Link>
-          </div>
-          <div className={s.navItem}>
-            <Link to='/cowdung'>COW DUNG PRODUCTS</Link>
-          </div>
-          <div className={s.navItem}>
-            <Link to='/newarrival'>NEW ARRIVAL</Link>
-          </div>
-          <div className={s.navItem}>
-            <Link to='/bestseller'>BEST SELLER</Link>
-          </div>
-          <div className={s.navItem}>
-            <Link to='/'>ABOUT US</Link>
-          </div>
-          <div className={s.navItem}>
-            <Link to='/products'>ALL PRODUCTS</Link>
-          </div>
-        </div>
-      </div>
-    </nav>
-  )
-}
-
-const Order = () => {
-  return (
-    <div>
-      <div className={s.seventyOne}>
-        <div className={s.hundredOne + ' ' + s.search}>
-          <Icon className={s.iconNO} icon='Search' />
-        </div>
-        <Link className={s.hundredOne} to='/order'>
-          <Icon className={s.icon} icon='person' />
-          <div>Order</div>
-        </Link>
-        <Link className={s.hundredOne} to='/bag'>
-          <Icon className={s.icon} icon='shopping_bag' />
-          <div>Bag</div>
-        </Link>
-      </div>
+    <div className={s.navLinksContainer}>
+      <nav className={s.navLinks + " indent " + (isSideBarOpened ? s.active : '')}>
+        {NavLinks.map((link) => (
+          <Link to={link.link} className={s.navItem} key={link.label}>{link.label}</Link>
+        ))}
+      </nav>
     </div>
   )
 }
 
-const Ban = () => {
+const NavLinks = [
+  {
+    label: 'HOME DECOR',
+    link: '/homedecor'
+  },
+  {
+    label: 'COW DUNG PRODUCTS',
+    link: '/cowdung'
+  },
+  {
+    label: 'NEW ARRIVAL',
+    link: '/newarrival'
+  },
+  {
+    label: 'BEST SELLER',
+    link: '/bestseller'
+  },
+  {
+    label: 'ABOUT US',
+    link: '/'
+  },
+  {
+    label: 'ALL PRODUCTS',
+    link: '/products'
+  }
+]
+
+const Labels = () => {
   useEffect(() => {
-    if (banner.length) {
+    if (labels.length) {
       const swiper = new window.Swiper('.homeBanSwiper', {
         slidesPerView: 1,
         spaceBetween: 0,
@@ -122,17 +111,17 @@ const Ban = () => {
         if (swiper) swiper.destroy()
       }
     }
-  }, [banner.length])
+  }, [])
 
   return (
-    <div className={s.main}>
-      <div className={s.banner + ' indent'}>
-        {!!banner.length && (
+    <div className={s.labelsContainer}>
+      <div className={s.labels}>
+        {!!labels.length && (
           <div className={'swiper homeBanSwiper ' + s.swiperContainer}>
             <div className='swiper-wrapper'>
-              {banner.map((banner, i) => (
-                <div className={s.slide + ' swiper-slide'} key={banner + i}>
-                  <div className={s.img}>{banner}</div>
+              {labels.map((b, i) => (
+                <div className={s.slide + ' swiper-slide'} key={b + i}>
+                  <span className={s.text + ' ellipsis'}>{b}</span>
                 </div>
               ))}
             </div>

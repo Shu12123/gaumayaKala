@@ -1,6 +1,6 @@
 import s from './styles.module.scss'
 import { Cards, Icon } from 'components'
-import { cardsData } from 'components/cardDetail'
+import { products } from 'data'
 
 export default function All_Products() {
   return (
@@ -41,8 +41,8 @@ export default function All_Products() {
         </div>
         <div className={s.thirtyTwo_rowThree}>
           <div className={s.thirtyTwo_rowThree_partOne}>
-            {cardsData.map((card, i) => (
-              <Cards.Card1 {...card} key={card.text} />
+            {products.map((card, i) => (
+              <Cards.Product {...card} key={card.text + i} />
             ))}
           </div>
         </div>
