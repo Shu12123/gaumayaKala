@@ -1,6 +1,6 @@
 import s from './styles.module.scss'
 import { useEffect } from 'react'
-import { Cards } from 'components'
+import { Button, Cards } from 'components'
 import { responsive } from 'helpers'
 import { collections, products, categories, feedbacks } from 'data'
 import Banners from './banners'
@@ -24,7 +24,8 @@ export default function Home() {
             <Cards.Product {...card} key={card.text + i} />
           ))}
         </div>
-        <button className={s.btn}>View All</button>
+        {/* <button className={s.btn}>View All</button> */}
+        <Button className={s.btn}>View All</Button>
       </div>
       <div className={s.homeHeader}>
         <div className={s.homeContent}>Shop By Category</div>

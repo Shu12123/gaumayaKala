@@ -1,5 +1,4 @@
 .first {
-  background-color: var(--c-seventeen);
   border-radius: 1.25rem;
   // width: 13rem;
   // height: 16.3rem;
@@ -11,6 +10,8 @@
 
     .mondayTwo {
       // margin-top: 0.875rem;
+      background-color: var(--c-seventeen);
+      border-radius: 1rem;
       position: relative;
       overflow: hidden;
       aspect-ratio: 1.33;
