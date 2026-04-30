@@ -24,12 +24,8 @@ const Product = ({ img, text, price }) => {
             </div>
           </Link>
           <div className={s.ten}>
-            <button type='button' onClick={prevImage} className={s.eleven}>
-              <Icon className={s.camera} icon='chevron_backward' />
-            </button>
-            <button type='button' onClick={nextImage} className={s.eleven}>
-              <Icon className={s.cameraNine} icon='chevron_forward' />
-            </button>
+            <Icon icon='chevron_backward' onClick={prevImage} className={s.eleven} />
+            <Icon onClick={nextImage} className={s.eleven} icon='chevron_forward' />
           </div>
         </div>
       </div>
@@ -47,9 +43,7 @@ const Product = ({ img, text, price }) => {
               <div>50% OFF</div>
             </div>
             <div className={s.five}>
-              <button type='button' className={s.five}>
-                <Icon className={s.cameraNew} icon='shopping_bag' />
-              </button>
+              <Icon className={s.cameraNew} icon='shopping_bag' />
             </div>
           </div>
         </div>

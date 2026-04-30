@@ -62,18 +62,7 @@
         background: var(--c-eight);
         border: 0.075rem solid var(--c-dark-2);
         border-radius: 1.5rem;
-        // width: 1.6rem;
-        // height: 1.6rem;
-        cursor: pointer;
-        font-size: 1.125rem;
-        pointer-events: auto;
-
-        .camera {
-          font-size: 1.575rem;
-        }
-        .cameraNine {
-          font-size: 1.575rem;
-        }
+        font-size: 1.575rem;
       }
       &:hover .ten {
         opacity: 1;
@@ -117,20 +106,19 @@
   }
 }
 
+.five {
+  font-size: 1rem;
+}
+
 //button
-.five Button {
+.cameraNew {
   background-color: var(--c-tenth);
-  // width: 2.5rem;
-  border-radius: 1.5rem;
-  // height: 2.45rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--c-eleventh);
-  font-size: 1.125rem;
-  min-width: unset !important;
-  border: none;
-  .cameraNew {
-    font-size: 1rem;
-    padding: 0.675rem 0.45rem;
-  }
+  padding: 0.5rem;
 }
 
 //button 2

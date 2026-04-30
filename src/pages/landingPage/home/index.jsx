@@ -24,7 +24,6 @@ export default function Home() {
             <Cards.Product {...card} key={card.text + i} />
           ))}
         </div>
-        {/* <button className={s.btn}>View All</button> */}
         <Button className={s.btn}>View All</Button>
       </div>
       <div className={s.homeHeader}>
@@ -42,7 +41,7 @@ export default function Home() {
             <Cards.Product {...card} key={card.text + i + card.img} />
           ))}
         </div>
-        <button className={s.btn}>View All</button>
+        <Button className={s.btn}>View All</Button>
       </div>
       <Banners uKey='bannerSection2' />
       <div className={s.homeHeader}>
